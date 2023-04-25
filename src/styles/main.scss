@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply bg-gradient-to-b from-[#2e026d] to-[#15162c];
+  }
   h1 {
     @apply text-4xl font-normal leading-normal;
   }
