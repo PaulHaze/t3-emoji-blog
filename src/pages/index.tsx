@@ -7,7 +7,12 @@ import { api } from '@/utils/api';
 const Home: NextPage = () => {
   const user = useUser();
   const { data } = api.posts.getAll.useQuery();
-  console.log(data);
+
+  const renderPosts = data?.map((post) => (
+    <div key={post.id} className="text-white">
+      {post.content}
+    </div>
+  ));
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
@@ -15,6 +20,7 @@ const Home: NextPage = () => {
         {!user.isSignedIn && <SignInButton />}
         {!!user.isSignedIn && <SignOutButton />}
       </div>
+      <div className="">{renderPosts}</div>
     </main>
   );
 };
