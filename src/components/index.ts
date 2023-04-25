@@ -1,1 +1,1 @@
-export * from './AuthShowcase';
+export {};
